@@ -1,0 +1,43 @@
+body {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.pageTitle {
+    text-align: center;
+    font-size: 48px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.searchForm {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.matchList {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.matchItem {
+    border: solid 1px black;
+    
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.matchTitle {
+
+}
+
+.matchDate {
+
+}
