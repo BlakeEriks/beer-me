@@ -1,5 +1,5 @@
 body {
-    width: 700px;
+    width: 600px;
     margin: 0 auto;
 }
 
@@ -27,17 +27,48 @@ body {
 }
 
 .matchItem {
+    max-height: 500px;
+    transition: max-height 0.7s ease-out;
+    overflow: hidden;
     border: solid 1px black;
-    
-    padding: 10px 30px;
-    display: flex;
-    justify-content: space-between;
+}
+
+.matchItem:hover {
+    max-height: 500px;
+    transition: max-height 750ms;
 }
 
 .matchTitle {
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px black;
+    padding: 10px 30px;
+}
+
+.matchTitleText {
+}
+
+.matchTitleDetails {
 
 }
 
-.matchDate {
+.matchCompetition {
+    padding-right: 30px;
+}
 
+.matchDate {
+}
+
+.matchContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 400px; */
+}
+
+.matchVideo {
+    width: 90% !important;
+    border-radius: 30px;
+    overflow: hidden;
+    margin: 5% 0;
 }
