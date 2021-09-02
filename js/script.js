@@ -37,7 +37,7 @@ const renderMatches = () => {
 
         $matchTitle.append($('<span>').addClass('matchTitleText').text(match.title));
         $matchTitleDetails.append($('<span>').addClass('matchCompetition').text(match.competition));
-        $matchTitleDetails.append($('<span>').addClass('matchDate').text(new Date(match.date).toLocaleDateString()));
+        $matchTitleDetails.append($('<span>').addClass('matchDate').text(formatDate(match.date)));
         $matchTitle.append($matchTitleDetails);
 
         $matchContent.append($matchVideo);
@@ -45,6 +45,14 @@ const renderMatches = () => {
         $matchItem.append($matchContent);
         $matchList.append($matchItem);
     });
+}
+
+const formatDate = date => {
+    
+    formattedDate = new Date(date);
+    const month = formattedDate.getMonth() + 1;
+    const day = formattedDate.getDate();
+    return month + '/' + day;
 }
 
 const $matchList = $('.matchList');
@@ -58,13 +66,14 @@ init();
 
 function preprocessMatchData(matchData) {
     for (match of matchData) {
-        let competitionArr = match.competition.split('');
-        for (let i = 1; i < competitionArr.length; i++) {
-            match.title = match.title.replace('-', "vs");
-            if (competitionArr[i] === ":") break;
-            competitionArr[i] = competitionArr[i].toLowerCase();
-        }
-        match.competition = competitionArr.join('');
+        match.title = match.title.replace('-', "vs");
+        // let competitionArr = match.competition.split('');
+        // for (let i = 1; i < competitionArr.length; i++) {
+        //     match.title = match.title.replace('-', "vs");
+        //     if (competitionArr[i] === ":") break;
+        //     competitionArr[i] = competitionArr[i].toLowerCase();
+        // }
+        match.competition = match.competition.substring(match.competition.indexOf(' '));
     }
     return matchData;
 }

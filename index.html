@@ -8,23 +8,25 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
     <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/04a430d3e9.js" crossorigin="anonymous"></script>
     <title>Goal Feed</title>
 </head> 
 <body>
-    <header>
-        <h1 class="pageTitle">Goal Feed</h1>
+    <header class="pageTitle">
+        <i class="fas fa-futbol pageTitleLogo"></i>
+        <span class="pageTitleText">Goal Feed</span>
+        <i class="fas fa-futbol pageTitleLogo"></i>
     </header>
 
     <main class="content">
-        <form class="searchForm">
-            <input type="text">
-        </form>
-
+        <div class="search">
+            <i class="fas fa-search searchIcon"></i>
+            <form class="searchForm">
+                <input class="searchInput" type="text">
+            </form>
+        </div>
         <div class="matchList">
         </div>
     </main>
-
-
-
 </body>
 </html>

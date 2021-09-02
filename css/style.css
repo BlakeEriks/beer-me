@@ -13,15 +13,38 @@
     src: url('../static/Skranji-Regular.ttf');
 }
 
+@font-face {
+    font-family: "YanoneKaffeesatz";
+    src: url('../static/YanoneKaffeesatz-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: "NewsCycle";
+    src: url("../static/NewsCycle-Regular.ttf");
+}
+
+
 body {
-    width: 600px;
+    width: 700px;
     margin: 0 auto;
 }
 
 .pageTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: row; */
+}
+
+.pageTitleLogo {
+    font-size: 48px;
+}
+
+.pageTitleText {
     font-family: 'Orbitron';
     text-align: center;
-    font-size: 48px;
+    font-size: 72px;
+    margin: 40px 20px;
 }
 
 .content {
@@ -30,10 +53,34 @@ body {
     flex-direction: column;
 }
 
-.searchForm {
+.search {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    margin-bottom: 50px;
+    align-items: center;
+
+    margin: 0 auto;
+    margin-bottom: 60px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.searchIcon {
+    font-size: 32px;
+}
+
+.searchForm {
+}
+
+.searchInput {
+    font-size: 26px;
+    padding: 8px;
+    border: none;
+}
+
+.searchInput:focus {
+    outline: none;
 }
 
 .matchList {
@@ -43,8 +90,8 @@ body {
 }
 
 .matchItem {
-    max-height: 500px;
-    transition: max-height 0.7s ease-out;
+    max-height: 64px;
+    transition: max-height 0.7s;
     overflow: hidden;
     border: solid 1px black;
 }
@@ -55,23 +102,26 @@ body {
 }
 
 .matchTitle {
-    
     display: flex;
     justify-content: space-between;
-    border: solid 1px black;
-    padding: 10px 30px;
+    align-items: center;
+    padding: 10px 35px;
+    white-space: nowrap;
 }
 
 .matchTitleText {
-    font-family: 'Skranji';
+    font-family: 'NewsCycle';
+    font-size: 32px;
 }
 
 .matchTitleDetails {
-
+    font-family: "NewsCycle";
+    font-size: 24px;
+    color: gray;
 }
 
 .matchCompetition {
-    padding-right: 30px;
+    padding-right: 10px;
 }
 
 .matchDate {
@@ -81,7 +131,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 400px; */
 }
 
 .matchVideo {
