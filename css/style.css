@@ -1,9 +1,25 @@
+@font-face {
+    font-family: "Orbitron";
+    src: url('../static/Orbitron-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Wallpoet";
+    src: url('../static/Wallpoet-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Skranji";
+    src: url('../static/Skranji-Regular.ttf');
+}
+
 body {
     width: 600px;
     margin: 0 auto;
 }
 
 .pageTitle {
+    font-family: 'Orbitron';
     text-align: center;
     font-size: 48px;
 }
@@ -39,6 +55,7 @@ body {
 }
 
 .matchTitle {
+    
     display: flex;
     justify-content: space-between;
     border: solid 1px black;
@@ -46,6 +63,7 @@ body {
 }
 
 .matchTitleText {
+    font-family: 'Skranji';
 }
 
 .matchTitleDetails {

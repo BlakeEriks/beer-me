@@ -39,7 +39,7 @@ const renderMatches = () => {
         $matchTitleDetails.append($('<span>').addClass('matchCompetition').text(match.competition));
         $matchTitleDetails.append($('<span>').addClass('matchDate').text(new Date(match.date).toLocaleDateString()));
         $matchTitle.append($matchTitleDetails);
-        
+
         $matchContent.append($matchVideo);
         $matchItem.append($matchTitle);
         $matchItem.append($matchContent);
@@ -60,6 +60,7 @@ function preprocessMatchData(matchData) {
     for (match of matchData) {
         let competitionArr = match.competition.split('');
         for (let i = 1; i < competitionArr.length; i++) {
+            match.title = match.title.replace('-', "vs");
             if (competitionArr[i] === ":") break;
             competitionArr[i] = competitionArr[i].toLowerCase();
         }
