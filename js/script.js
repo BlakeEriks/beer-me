@@ -1,6 +1,6 @@
 let matchData, matchList, leagueData;
 
-const matchesShown = 5;
+let matchesShown = 5;
 
 const init = () => {
 
@@ -32,19 +32,27 @@ const renderMatches = () => {
         let $matchItem = $('<div>').addClass('matchItem').css('height', $(this).height);
         let $matchTitle = $('<div>').addClass('matchTitle');
         let $matchTitleDetails = $('<div>').addClass('matchTitleDetails');
-        let $matchContent = $('<div>').addClass('matchContent');//.hide();
-        let $matchVideo = $("<div>").addClass('matchVideo').append($(match.videos[0].embed));
+
+        let $matchContent = $('<div>').addClass('matchContent');
+        let $matchInnerContent = $('<div>').addClass('matchInnerContent');
+        let $matchVideoTitle = $('<div>').addClass('matchVideoTitle').text(match.videos[0].title);
+        let $matchVideo = $('<div>').addClass('matchVideo').append($(match.videos[0].embed));
+        $matchInnerContent.append($matchVideoTitle);
+        $matchInnerContent.append($matchVideo);
+        $matchContent.append($matchInnerContent);
 
         $matchTitle.append($('<span>').addClass('matchTitleText').text(match.title));
-        $matchTitleDetails.append($('<span>').addClass('matchCompetition').text(match.competition));
-        $matchTitleDetails.append($('<span>').addClass('matchDate').text(formatDate(match.date)));
-        $matchTitle.append($matchTitleDetails);
+        $matchTitleDetails.append($('<span>').addClass('matchTitleDetais').text(match.competition + ' - ' + formatDate(match.date)));
 
-        $matchContent.append($matchVideo);
+        $matchTitle.append($matchTitleDetails);
+        
         $matchItem.append($matchTitle);
         $matchItem.append($matchContent);
         $matchList.append($matchItem);
     });
+
+    let $showMore = $('<div>').addClass('showMoreButton').text('Show more...');
+    $matchList.append($showMore);
 }
 
 const formatDate = date => {
@@ -57,22 +65,13 @@ const formatDate = date => {
 
 const $matchList = $('.matchList');
 const $matchItem = $('.matchItem');
-
-$matchItem.on('click', () => {
-    console.log('clicked match: ' + this);
-});
+const $showMoreButton = $('.showMoreButton');
 
 init();
 
 function preprocessMatchData(matchData) {
     for (match of matchData) {
         match.title = match.title.replace('-', "vs");
-        // let competitionArr = match.competition.split('');
-        // for (let i = 1; i < competitionArr.length; i++) {
-        //     match.title = match.title.replace('-', "vs");
-        //     if (competitionArr[i] === ":") break;
-        //     competitionArr[i] = competitionArr[i].toLowerCase();
-        // }
         match.competition = match.competition.substring(match.competition.indexOf(' '));
     }
     return matchData;

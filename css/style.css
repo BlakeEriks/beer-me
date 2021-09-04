@@ -23,28 +23,43 @@
     src: url("../static/NewsCycle-Regular.ttf");
 }
 
+:root {
+    --red: #ef233c;
+    --light-gray: #edf2f4;
+    --med-gray: #8d99ae;
+    --dark-gray: #2b2d42;
+}
 
 body {
     width: 700px;
-    margin: 0 auto;
+    margin: 40px auto;
+}
+
+.app {
+    background: var(--light-gray);
+    border: 4px solid var(--dark-gray);
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .pageTitle {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex-direction: row; */
+    cursor: pointer;
 }
 
 .pageTitleLogo {
     font-size: 48px;
+    color: var(--dark-gray);
 }
 
 .pageTitleText {
     font-family: 'Orbitron';
     text-align: center;
     font-size: 72px;
-    margin: 40px 20px;
+    color: var(--red);
+    margin: 10px 20px;
 }
 
 .content {
@@ -59,21 +74,23 @@ body {
     justify-content: center;
     align-items: center;
 
-    margin: 0 auto;
-    margin-bottom: 60px;
+    margin: 20px auto;
+    margin-bottom: 20px;
     padding: 5px 10px;
-    border: 1px solid black;
     border-radius: 20px;
+    background: var(--light-gray);
+    border: 4px solid var(--dark-gray);
 }
 
 .searchIcon {
     font-size: 32px;
-}
-
-.searchForm {
+    color: var(--red);
 }
 
 .searchInput {
+    background: var(--light-gray);
+    color: var(--dark-gray);
+    font-family: 'NewsCycle';
     font-size: 26px;
     padding: 8px;
     border: none;
@@ -87,55 +104,78 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .matchItem {
-    max-height: 64px;
+    max-height: 59px;
     transition: max-height 0.7s;
     overflow: hidden;
-    border: solid 1px black;
 }
-
+    
 .matchItem:hover {
     max-height: 500px;
     transition: max-height 750ms;
 }
 
 .matchTitle {
+    background-color: var(--light-gray);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 35px;
     white-space: nowrap;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -6px 9px -7px inset;
 }
 
 .matchTitleText {
+    color: var(--red);
     font-family: 'NewsCycle';
-    font-size: 32px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .matchTitleDetails {
     font-family: "NewsCycle";
     font-size: 24px;
-    color: gray;
-}
-
-.matchCompetition {
-    padding-right: 10px;
-}
-
-.matchDate {
+    color: var(--dark-gray);
 }
 
 .matchContent {
     display: flex;
     justify-content: center;
+    padding: 20px 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -6px 9px -7px inset;
+}
+
+.matchInnerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 90%;
+    background-color: var(--red);
+    border-radius: 30px;
 }
 
 .matchVideo {
-    width: 90% !important;
-    border-radius: 30px;
+    width: 100%;
+    border-radius: 0 0 30px 30px;
     overflow: hidden;
-    margin: 5% 0;
+}
+
+.matchVideoTitle {
+    color: var(--light-gray);
+    font-size: 24px;
+    font-family: monospace;
+}
+
+.showMoreButton {
+    font-family: "Skranji";
+    font-size: 24px;
+    text-align: center;
+
+    margin-top: 20px auto;
+    padding: 5px;
+    cursor: pointer;
 }
