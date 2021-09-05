@@ -1,28 +1,3 @@
-@font-face {
-    font-family: "Orbitron";
-    src: url('../static/Orbitron-Regular.ttf');
-}
-
-@font-face {
-    font-family: "Wallpoet";
-    src: url('../static/Wallpoet-Regular.ttf');
-}
-
-@font-face {
-    font-family: "Skranji";
-    src: url('../static/Skranji-Regular.ttf');
-}
-
-@font-face {
-    font-family: "YanoneKaffeesatz";
-    src: url('../static/YanoneKaffeesatz-VariableFont_wght.ttf');
-}
-
-@font-face {
-    font-family: "NewsCycle";
-    src: url("../static/NewsCycle-Regular.ttf");
-}
-
 :root {
     --red: #ef233c;
     --light-gray: #edf2f4;
@@ -130,13 +105,13 @@ body {
 
 .matchTitleText {
     color: var(--red);
-    font-family: 'NewsCycle';
+    font-family: 'News Cycle', sans-serif;
     font-size: 24px;
     font-weight: bold;
 }
 
 .matchTitleDetails {
-    font-family: "NewsCycle";
+    font-family: 'News Cycle', sans-serif;
     font-size: 24px;
     color: var(--dark-gray);
 }
@@ -175,6 +150,7 @@ body {
     font-size: 24px;
     text-align: center;
 
+    color: var(--dark-gray);
     margin-top: 20px auto;
     padding: 5px;
     cursor: pointer;
