@@ -10,7 +10,12 @@ const preprocessMatchData = matchData => {
     let htmlMatchList = [];
     for (match of matchData) {
         match.title = match.title.replace('-', "vs");
-        match.competition = match.competition.substring(match.competition.indexOf(' '));
+        if (match.competition.includes('CUP: Africa')) {
+            match.competition = 'AWC: ' + match.competition.substring(19);
+        }
+        else {
+            match.competition = match.competition.substring(match.competition.indexOf(' '));
+        }
         let $matchItem = $('<div>').addClass('matchItem').css('height', $(this).height);
         let $matchTitle = $('<div>').addClass('matchTitle');
         let $matchTitleDetails = $('<div>').addClass('matchTitleDetails');
@@ -38,7 +43,7 @@ const preprocessMatchData = matchData => {
 const refreshCallbacks = () => {
     const $showMoreButton = $('.showMoreButton');
     $showMoreButton.on('click', () => {
-        matchesShown = (matchesShown + 5 > completeMatchList.length) ? completeMatchList.length : matchesShown + 5;
+        matchesShown = (matchesShown + 5 > filteredMatchList.length) ? filteredMatchList.length : matchesShown + 5;
         renderMatches();
     });
 }
@@ -49,6 +54,7 @@ const renderMatches = () => {
         $matchList.append(filteredMatchList[i]);
     }
     let $showMore = $('<div>').addClass('showMoreButton').text('Show more...');
+    if (matchesShown === filteredMatchList.length) $showMore.hide();
     $matchList.append($showMore);
     refreshCallbacks();
 }
@@ -71,6 +77,7 @@ const init = () => {
     $searchInput.on('input', () => {
         let filter = $searchInput.val();
         filteredMatchList = completeMatchList.filter( match => match.children('.matchTitle')[0].outerText.includes(filter));
+        matchesShown = filteredMatchList.length < 5 ? filteredMatchList.length : 5;
         renderMatches();
     });
 }
