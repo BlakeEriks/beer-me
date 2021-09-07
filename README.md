@@ -1,7 +1,7 @@
 
 <p align="center"><img  src="./static/img/GoalFeedTitle.png"/>Created by Blake Eriks</p>
 
-[Goal Feed](https://goal-feed-bb3b9crdv-blakeeriks.vercel.app/) is a web app that let's you check highlights on recent professional soccer (football) matches that you didn't get to watch.
+[Goal Feed](https://goal-feed.vercel.app/) is a web app that let's you check highlights on recent professional soccer (football) matches that you didn't get to watch.
 
 Goal Feed is built using:
 * HTML5
@@ -26,3 +26,7 @@ This app uses a single API call to get a list of recent matches from [ScoreBat](
 * Animate added matches after clicking show more
 
 * Remove show more button when end of list is reached.
+
+* Nav bar at the top for finding games by tournaments / viewing standings in different leagues
+
+* Media queries for mobile friendly usage

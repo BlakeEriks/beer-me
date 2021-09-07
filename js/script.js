@@ -13,6 +13,9 @@ const preprocessMatchData = matchData => {
         if (match.competition.includes('CUP: Africa')) {
             match.competition = 'AWC: ' + match.competition.substring(19);
         }
+        else if (match.competition.includes('UEFA Under-21')) {
+            match.competition = match.competition.replace('Qualifying round, ', '');
+        }
         else {
             match.competition = match.competition.substring(match.competition.indexOf(' '));
         }

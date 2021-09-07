@@ -155,4 +155,9 @@ body {
     margin-top: 20px auto;
     padding: 5px;
     cursor: pointer;
+    transition:color .2s ease-in;
+}
+
+.showMoreButton:hover {
+    color: #dce444;
 }
