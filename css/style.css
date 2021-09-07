@@ -6,6 +6,7 @@
 }
 
 body {
+    background-image: url("https://i.pinimg.com/originals/ee/19/e9/ee19e93696e47519c25fafbe13239be8.jpg");
     width: 700px;
     margin: 40px auto;
 }
@@ -65,7 +66,7 @@ body {
 .searchInput {
     background: var(--light-gray);
     color: var(--dark-gray);
-    font-family: 'NewsCycle';
+    font-family: 'Orbitron';
     font-size: 26px;
     padding: 8px;
     border: none;
