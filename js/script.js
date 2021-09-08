@@ -43,14 +43,6 @@ const preprocessMatchData = matchData => {
     return htmlMatchList;
 }
 
-const refreshCallbacks = () => {
-    const $showMoreButton = $('.showMoreButton');
-    $showMoreButton.on('click', () => {
-        matchesShown = (matchesShown + 5 > filteredMatchList.length) ? filteredMatchList.length : matchesShown + 5;
-        renderMatches();
-    });
-}
-
 const renderMatches = () => {
     $matchList.empty();
     for(let i = 0; i < matchesShown; i++) {
@@ -59,11 +51,13 @@ const renderMatches = () => {
     let $showMore = $('<div>').addClass('showMoreButton').text('Show more...');
     if (matchesShown === filteredMatchList.length) $showMore.hide();
     $matchList.append($showMore);
-    refreshCallbacks();
+    $('.showMoreButton').on('click', () => {
+        matchesShown = (matchesShown + 5 > filteredMatchList.length) ? filteredMatchList.length : matchesShown + 5;
+        renderMatches();
+    });
 }
 
 const init = () => {
-
     $.ajax({
         url: `https://www.scorebat.com/video-api/v3/`
     }).then(
