@@ -159,5 +159,5 @@ body {
 }
 
 .showMoreButton:hover {
-    color: #dce444;
+    color: var(--red);
 }

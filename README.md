@@ -21,12 +21,12 @@ This app uses a single API call to get a list of recent matches from [ScoreBat](
 
 * API provides multiple video links sometimes - create sliding panel for these instances
 
-* Highlighting on currently hovered match / show more button
+* Highlighting on currently hovered match
 
 * Animate added matches after clicking show more
-
-* Remove show more button when end of list is reached.
 
 * Nav bar at the top for finding games by tournaments / viewing standings in different leagues
 
 * Media queries for mobile friendly usage
+
+* Add a favorite team that takes priority on the game feed
